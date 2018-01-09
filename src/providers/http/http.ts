@@ -13,7 +13,8 @@ import 'rxjs/add/operator/toPromise';
 export class HttpProvider {
 
   datos : any;
-  path : string = 'http://www.culturacampeche.com/wp-json/wp/v2/posts?orderby=date&per_page=100';
+  path : string = 'http://www.culturacampeche.com/wp-json/wp/v2/posts?orderby=date&per_page=20';
+  path_post: string = 'http://www.culturacampeche.com/wp-json/wp/v2/posts/';
 
   constructor(public http: Http) {
     console.log('Hello HttpProvider Provider');
@@ -26,6 +27,16 @@ export class HttpProvider {
       .map(res => res.json(),
         err => {
           console.log(err);
+        }).toPromise()
+  }
+
+  postById(id)
+  {
+    return this.http
+      .get(this.path_post+id )
+      .map(res => res.json(),
+        err => {
+          console.log(err)
         }).toPromise()
   }
 

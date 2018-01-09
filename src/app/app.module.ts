@@ -13,6 +13,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import {IsaacPage} from "../pages/isaac/isaac";
 import { HttpProvider } from '../providers/http/http';
 import { HttpModule } from "@angular/http";
+import {ContentPage} from "../pages/content_page/content_page";
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { HttpModule } from "@angular/http";
     ContactPage,
     HomePage,
     IsaacPage,
+    ContentPage,
     TabsPage
   ],
   imports: [
@@ -35,6 +37,7 @@ import { HttpModule } from "@angular/http";
     ContactPage,
     HomePage,
     IsaacPage,
+    ContentPage,
     TabsPage
   ],
   providers: [
